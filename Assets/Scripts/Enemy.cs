@@ -143,8 +143,8 @@ public class Enemy : MonoBehaviour
         _enemyModelRigidbody.isKinematic = false;
         _enemyModelRigidbody.useGravity = false;        
         _collider.enabled = false;
-        //var colliders = GetComponentsInChildren<Collider>();
-        foreach (var coll in GetComponentsInChildren<Collider>())
+        var colliders = GetComponentsInChildren<Collider>();
+        foreach (var coll in colliders)
         {
             coll.enabled = false;
         }
