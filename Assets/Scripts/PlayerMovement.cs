@@ -330,6 +330,7 @@ public class PlayerMovement : MonoBehaviour
             _isRunning = true;
             _playerRigidbody.isKinematic = false;
             _stickModel.ChangePositionOfStick(StickStateEnum.Run);
+            GameEvents.current.RunFirstEntryEvent();
         }
         else if (state == CharacterState.Final && _currentState != state)
         {
@@ -341,6 +342,7 @@ public class PlayerMovement : MonoBehaviour
             _stickModel.StaffAttackStart();
             _currentState = state;
             _stickModel.ChangePositionOfStick(StickStateEnum.Hurricane);
+            GameEvents.current.HurricaneFirstEntryEvent();
 
         }
         else if (state == CharacterState.Balancing && _currentState != state)
@@ -348,6 +350,7 @@ public class PlayerMovement : MonoBehaviour
             _stickModel.StaffAttackEnd();
             _currentState = state;
             _stickModel.ChangePositionOfStick(StickStateEnum.Balancing);
+            GameEvents.current.BalanceFirstEntryEvent();
         }
         else if (state == CharacterState.PrepareToBalance && _currentState != state)
         {

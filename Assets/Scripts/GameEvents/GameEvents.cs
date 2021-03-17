@@ -8,14 +8,15 @@ public class GameEvents : MonoBehaviour
     {
         current = this;
     }
+
     #region TouchBeganEvents
     public Action<Vector2> OnTouchBeganEvent;
     public void TouchBeganEvent(Vector2 position)
     {
         if (OnTouchBeganEvent != null)
         {
-            OnTouchBeganEvent(position);            
-        }        
+            OnTouchBeganEvent(position);
+        }
     }
     #endregion
     #region TouchMovedEvents
@@ -70,18 +71,41 @@ public class GameEvents : MonoBehaviour
     }
     #endregion
 
-    public Action OnFlyFirstEntryEvent; //Сюда подписывать вызов Юай
-    public void FlyFirstEntryEvent() //Вызывать в ПлеерМувмент
+    #region UI tutorial events
+    public Action OnRunFirstEntryEvent;
+    public void RunFirstEntryEvent()
     {
-        /*
-        if (flyFirstEvent)
-        Флаг из плеерПрефс
-        {*/
-        
-            if (OnSlideEvent != null)
-            {
-                OnFlyFirstEntryEvent();
-            }
-        
+        if (OnRunFirstEntryEvent != null)
+        {
+            //OnRunFirstEntryEvent();
+        }
     }
+
+    public Action OnFlyFirstEntryEvent;
+    public void FlyFirstEntryEvent()
+    {
+        if (OnFlyFirstEntryEvent != null)
+        {
+            OnFlyFirstEntryEvent();
+        }
+    }
+
+    public Action OnBalanceFirstEntryEvent;
+    public void BalanceFirstEntryEvent()
+    {
+        if (OnBalanceFirstEntryEvent != null)
+        {
+            OnBalanceFirstEntryEvent();
+        }
+    }
+
+    public Action OnHurricaneFirstEntryEvent;
+    public void HurricaneFirstEntryEvent()
+    {
+        if (OnHurricaneFirstEntryEvent != null)
+        {
+            OnHurricaneFirstEntryEvent();
+        }
+    }
+    #endregion
 }
